@@ -1,17 +1,17 @@
-terraform {
-  required_version = ">= 1.0"
-  required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 2.0"
-    }
-  }
+variable "vpcname" {
+  type    = string
+  default = "myvpc"
 }
 
-provider "aws" {
-    region = "ap-south-1"
+variable "cidr_block" {
+  type = string
+  default = "10.0.0.0/16"
 }
 
 resource "aws_vpc" "myvpc" {
-    cidr_block = "10.0.0.0/16"
+  cidr_block = var.cidr_block
+
+  tags = {
+    Name = var.vpcname
+  }
 }
