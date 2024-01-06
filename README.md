@@ -101,3 +101,8 @@ https://aws.amazon.com/blogs/containers/build-and-deploy-a-spring-boot-applicati
 3. Homework challenge: Create a VPC using terraform, print the vpc id by using outputs
 4. Create EC2, how to check what are the required attributes using the terraform documentation.
 5. Create Elastic IP and associating with ec2 instance
+
+#### Lesson 3 (next lesson)
+Terraform aws modules:
+https://registry.terraform.io/modules/terraform-aws-modules/ec2-instance/aws/latest
+
