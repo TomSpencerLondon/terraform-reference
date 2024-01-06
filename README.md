@@ -60,3 +60,44 @@ Cloudformation maintains a state of your stack on AWS. Terraform uses state file
 ### Drift
 If two people execute terraform apply at the same time this can lead to drift. 
 State drift can make terraform break. In order to fix the drift - we import the AWS configuration to the state.
+
+### Linting
+```bash
+
+➜  first-resource git:(main) tflint
+Failed to load configurations; main.tf:12,18-25: Invalid type specification; The keyword "stringy" is not a valid type specification.:
+
+Error: Invalid type specification
+
+  on main.tf line 12, in variable "mylist":
+  12:   type    = list(stringy)
+
+The keyword "stringy" is not a valid type specification.
+```
+
+### Documentation
+- terraform works by folder
+- terraform can also use modules
+
+https://developer.hashicorp.com/terraform/docs
+
+#### Modules
+https://registry.terraform.io/browse/modules
+
+
+### Future project
+https://aws.amazon.com/blogs/containers/build-and-deploy-a-spring-boot-application-to-aws-app-runner-with-a-ci-cd-pipeline-using-terraform/
+
+### Lessons
+
+#### Lesson 1
+1. What is terraform
+2. create, init, plan, apply
+3. variables
+
+#### Lesson 2
+1. Outputs
+2. Tuples and Objects
+3. Homework challenge: Create a VPC using terraform, print the vpc id by using outputs
+4. Create EC2, how to check what are the required attributes using the terraform documentation.
+5. Create Elastic IP and associating with ec2 instance
